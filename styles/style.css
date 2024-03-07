@@ -1,0 +1,165 @@
+/* allgemein */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Dosis:wght@200..800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap');
+
+/* .comfortaa-<uniquifier> {
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* .teko-<uniquifier> {
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+ */
+
+/* .dosis-<uniquifier> {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+/* 
+.kanit-regular {
+    font-family: "Kanit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+body {
+    font-family: "Comfortaa", sans-serif;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(5, 3fr) 2fr;
+    grid-template-rows: repeat(7, 3fr);
+    grid-template-areas:
+        "h1     h1      .       .       .       nav     "
+        ".      pics1   pics1   pics1   title1  .       "
+        ".      pics1   pics1   pics1   .       .       "
+        "pics2  pics2   pics2   .       title2  .       "
+        "pics2  pics2   pics2   .       .       .       "
+        ".      pics3   pics3   pics3   title3  .       "
+        ".      pics3   pics3   pics3   .       footer  "
+
+    ;
+    gap: 2%;
+    margin: 2%;
+    padding: 10px;
+    background-color: aliceblue;
+
+}
+
+img {
+    border: 1px solid black;
+    
+}
+
+/* sektionen allgemein */
+
+h1,
+h3,
+nav,
+footer,
+.slide,
+.icon {
+    display: flex;
+}
+
+h3 {
+    align-items: flex-end;
+
+}
+
+.title1,
+.title3 {
+    justify-content: flex-end;
+}
+
+.title2 {
+    justify-content: flex-start;
+}
+
+.slide {
+    overflow: auto;
+    /* border: 3px solid rgb(219, 235, 248); */
+    opacity: 0.6;
+    /* border-radius: 5px; */
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 15px 15px 69px #bebebe,
+                -15px -15px 69px #ffffff;
+    gap: 10px;          
+      
+}
+
+.slide:hover {
+    opacity: 1;
+    transition: 1s;
+}
+
+nav,
+footer {
+    background-color: rgb(246, 246, 287);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.icon {
+    border-radius: 5px;
+    background-color: rgb(219, 235, 248);
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    min-height: 50px;
+    font-size: 1.8rem;
+}
+
+/* sektionen */
+
+h1 {
+    background-color: ;
+    grid-area: h1;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    margin: 0;
+
+}
+
+nav {
+    grid-area: nav;
+}
+
+.pics1 {
+    grid-area: pics1;
+}
+
+.pics2 {
+    grid-area: pics2;
+}
+
+.pics3 {
+    grid-area: pics3;
+}
+
+.title1 {
+    grid-area: title1;
+}
+
+.title2 {
+    grid-area: title2;
+}
+
+.title3 {
+    grid-area: title3;
+}
+
+footer {
+    grid-area: footer;
+}
