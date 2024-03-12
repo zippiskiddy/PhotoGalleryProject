@@ -34,18 +34,18 @@
 body {
     font-family: "Comfortaa", sans-serif;
     display: grid;
-    height: 100vh;
-    grid-template-columns: repeat(5, 3fr) 2fr;
-    grid-template-rows: repeat(7, 3fr);
+    width: auto;
+    height: auto;
+    grid-template-columns: repeat(5, 1fr) 150px;
+    grid-template-rows: repeat(6, 1fr) 150px;
     grid-template-areas:
-        "h1     h1      .       .       .       nav     "
-        ".      pics1   pics1   pics1   title1  .       "
-        ".      pics1   pics1   pics1   .       .       "
-        "pics2  pics2   pics2   .       title2  .       "
-        "pics2  pics2   pics2   .       .       .       "
-        ".      pics3   pics3   pics3   title3  .       "
-        ".      pics3   pics3   pics3   .       footer  "
-
+        "h1     h1      h1      .       .       nav     "
+        "main   main    main    main    main    .       "
+        "main   main    main    main    main    .       "
+        "main   main    main    main    main    .       "
+        "main   main    main    main    main    .       "
+        "main   main    main    main    main    .       "
+        ".      copy    copy    copy    .       footer  "
     ;
     gap: 2%;
     margin: 2%;
@@ -54,56 +54,21 @@ body {
 
 }
 
-img {
-    border: 1px solid black;
-    
-}
 
 /* sektionen allgemein */
 
 h1,
-h3,
 nav,
 footer,
-.slide,
+.copy,
 .icon {
     display: flex;
 }
 
-h3 {
-    align-items: flex-end;
-
-}
-
-.title1,
-.title3 {
-    justify-content: flex-end;
-}
-
-.title2 {
-    justify-content: flex-start;
-}
-
-.slide {
-    overflow: auto;
-    /* border: 3px solid rgb(219, 235, 248); */
-    opacity: 0.6;
-    /* border-radius: 5px; */
-    background: linear-gradient(145deg, #f0f0f0, #cacaca);
-    box-shadow: 15px 15px 69px #bebebe,
-                -15px -15px 69px #ffffff;
-    gap: 10px;          
-      
-}
-
-.slide:hover {
-    opacity: 1;
-    transition: 1s;
-}
 
 nav,
 footer {
-    background-color: rgb(246, 246, 287);
+    background-color: transparent;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -136,30 +101,96 @@ nav {
     grid-area: nav;
 }
 
-.pics1 {
-    grid-area: pics1;
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr) 2fr repeat(2, 1fr) 2fr repeat(2, 1fr);
+    grid-template-areas:
+        "img1   .       img5    .       img9    "
+        "img1   img3    img5    img7    img9    "
+        "img1   img3    img5    img7    img9"
+        ".      img3    .       img7    .       "
+        ".      img4    .       img8    .       "
+        "img2   img4    img6    img8    img10   "
+        "img2   img4    img6    img8    img10   "
+        "img2   .       img6    .       img10   "
+    ;
+    column-gap: 2%;
+    row-gap: 4%;
 }
 
-.pics2 {
-    grid-area: pics2;
-}
-
-.pics3 {
-    grid-area: pics3;
-}
-
-.title1 {
-    grid-area: title1;
-}
-
-.title2 {
-    grid-area: title2;
-}
-
-.title3 {
-    grid-area: title3;
+.copy {
+    grid-area: copy;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
     grid-area: footer;
+}
+
+.images {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 30px;
+    /* background: rgba(0, 0, 0, 0.6); */
+    box-shadow: 17px 17px 34px #646363,
+        -17px -17px 34px #ffffff;
+}
+
+img {
+    width: 100%;
+    opacity: 0.6;
+}
+
+.img1 {
+    grid-area: img1;
+}
+
+.img2 {
+    grid-area: img2;
+}
+
+.img3 {
+    grid-area: img3;
+}
+
+.img4 {
+    grid-area: img4;
+}
+
+.img5 {
+    grid-area: img5;
+}
+
+.img6 {
+    grid-area: img6;
+}
+
+.img7 {
+    grid-area: img7;
+}
+
+.img8 {
+    grid-area: img8;
+}
+
+.img9 {
+    grid-area: img9;
+}
+
+.img10 {
+    grid-area: img10;
+}
+
+
+img:hover {
+    opacity: 1;
+    
+    .images {
+        transform: scale(1.3);
+        overflow: auto;
+    }
 }
