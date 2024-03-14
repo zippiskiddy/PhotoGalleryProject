@@ -19,6 +19,7 @@ A "grid"-ception.
 3. Including images
 4. Fine grinding
 5. Adding media query
+
    ![mobile view](/readme_images/Screenshot%20from%202024-03-14%2011-55-33.png)
 
 
